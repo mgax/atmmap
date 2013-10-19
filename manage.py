@@ -41,7 +41,8 @@ def create_app():
 
 
 def get_brand(node):
-    name = node['tags'].get('name', '').lower()
+    name = (node['tags'].get('name', '') +
+            node['tags'].get('operator', '')).lower()
     for brand in BRAND_DATA:
         if any(p in name for p in brand['patterns']):
             return brand['code']
