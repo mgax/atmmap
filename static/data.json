@@ -1,0 +1,464 @@
+[
+  {
+    "id": 286859155,
+    "lat": 44.4345685,
+    "lon": 26.1008649,
+    "name": "Banca Comercial\u0103 Rom\u00e2n\u0103"
+  },
+  {
+    "id": 501911061,
+    "lat": 44.4260524,
+    "lon": 26.0989901,
+    "name": "BCR"
+  },
+  {
+    "id": 501911065,
+    "lat": 44.4264028,
+    "lon": 26.0994417,
+    "name": "Intesa"
+  },
+  {
+    "id": 501932636,
+    "lat": 44.4225159,
+    "lon": 26.0908729,
+    "name": "BRD"
+  },
+  {
+    "id": 501932638,
+    "lat": 44.4223502,
+    "lon": 26.0908739,
+    "name": "Raiffeisen"
+  },
+  {
+    "id": 510598710,
+    "lat": 44.4301338,
+    "lon": 26.1064799,
+    "name": "ING Unirii, Coposu"
+  },
+  {
+    "id": 647187505,
+    "lat": 44.4292281,
+    "lon": 26.1034315,
+    "name": "BRD Unirii"
+  },
+  {
+    "id": 650837879,
+    "lat": 44.4383351,
+    "lon": 26.0773501,
+    "name": "BCR"
+  },
+  {
+    "id": 734590015,
+    "lat": 44.4352429,
+    "lon": 26.0994099,
+    "name": "Banca Transilvania"
+  },
+  {
+    "id": 734628592,
+    "lat": 44.4294638,
+    "lon": 26.1012212,
+    "name": "RBS"
+  },
+  {
+    "id": 920656921,
+    "lat": 44.4390016,
+    "lon": 26.0763576,
+    "name": "Banca Comercial\u0103 Carpatica - Sucursala Bucure\u0219ti Plevnei"
+  },
+  {
+    "id": 932206947,
+    "lat": 44.4362658,
+    "lon": 26.1056292,
+    "name": "Banca Transilvania"
+  },
+  {
+    "id": 1005960840,
+    "lat": 44.4232168,
+    "lon": 26.0740618,
+    "name": "Unicredit \u021airiac"
+  },
+  {
+    "id": 1038076407,
+    "lat": 44.4322657,
+    "lon": 26.098801,
+    "name": "CEC Bank Lipscani"
+  },
+  {
+    "id": 1227925558,
+    "lat": 44.4424443,
+    "lon": 26.0910989,
+    "name": "Marfin Bank"
+  },
+  {
+    "id": 1390590374,
+    "lat": 44.436553,
+    "lon": 26.1065536,
+    "name": "BCR"
+  },
+  {
+    "id": 1393093119,
+    "lat": 44.443565,
+    "lon": 26.0953051,
+    "name": "BCR"
+  },
+  {
+    "id": 1393093204,
+    "lat": 44.4435259,
+    "lon": 26.0950475,
+    "name": "BRD"
+  },
+  {
+    "id": 1439641536,
+    "lat": 44.429906,
+    "lon": 26.1077368,
+    "name": "CEC"
+  },
+  {
+    "id": 1563413156,
+    "lat": 44.4408604,
+    "lon": 26.095353,
+    "name": "Piraeus Bank Rom\u00e2nia - Agen\u021bia Calea Victoriei"
+  },
+  {
+    "id": 1563413161,
+    "lat": 44.4348959,
+    "lon": 26.088476,
+    "name": "Piraeus Bank Romania - Agen\u021bia Kog\u0103lniceanu"
+  },
+  {
+    "id": 1563413163,
+    "lat": 44.4326447,
+    "lon": 26.0976404,
+    "name": "Piraeus Bank Rom\u00e2nia - Agen\u021bia Lipscani"
+  },
+  {
+    "id": 1563413167,
+    "lat": 44.4241898,
+    "lon": 26.075653,
+    "name": "Piraeus Bank Romania - Agen\u021bia Panduri"
+  },
+  {
+    "id": 1563413172,
+    "lat": 44.4272553,
+    "lon": 26.1044768,
+    "name": "Piraeus Bank Romania - Agen\u021bia Unirea Splai"
+  },
+  {
+    "id": 1563413174,
+    "lat": 44.4367406,
+    "lon": 26.1094759,
+    "name": "Piraeus Bank Romania - Sucursala Municipiului Bucure\u0219ti"
+  },
+  {
+    "id": 1563503647,
+    "lat": 44.4368472,
+    "lon": 26.1088484,
+    "name": "ATM - Raiffeisen Bank - Asirom"
+  },
+  {
+    "id": 1563503663,
+    "lat": 44.4474726,
+    "lon": 26.0895259,
+    "name": "ATM - Raiffeisen Bank - Casino Casa Vernescu"
+  },
+  {
+    "id": 1563503866,
+    "lat": 44.4473246,
+    "lon": 26.077685,
+    "name": "Raiffeisen Bank - Agen\u021bia Grivi\u021ba"
+  },
+  {
+    "id": 1563503900,
+    "lat": 44.4439398,
+    "lon": 26.0960701,
+    "name": "Raiffeisen Bank - Agen\u021bia Pia\u021ba Amzei"
+  },
+  {
+    "id": 1563503910,
+    "lat": 44.4464724,
+    "lon": 26.0972985,
+    "name": "Raiffeisen Bank - Agen\u021bia Pia\u021ba Roman\u0103"
+  },
+  {
+    "id": 1563503936,
+    "lat": 44.4336389,
+    "lon": 26.0978324,
+    "name": "Raiffeisen Bank - Agen\u021bia Victoria(Smardan)"
+  },
+  {
+    "id": 1705582429,
+    "lat": 44.440996,
+    "lon": 26.1042423,
+    "name": "Unicredit \u021airiac Bank"
+  },
+  {
+    "id": 1729617162,
+    "lat": 44.4342945,
+    "lon": 26.0878611,
+    "name": "BRD"
+  },
+  {
+    "id": 1729617186,
+    "lat": 44.4367456,
+    "lon": 26.1007015,
+    "name": "Bancpost"
+  },
+  {
+    "id": 1814904369,
+    "lat": 44.4317928,
+    "lon": 26.1013019,
+    "name": "Garanti Bank"
+  },
+  {
+    "id": 1814904459,
+    "lat": 44.431551,
+    "lon": 26.1031294,
+    "name": "Raiffeisen Bank"
+  },
+  {
+    "id": 1814934106,
+    "lat": 44.4292448,
+    "lon": 26.1042828,
+    "name": "Raiffeisen Bank"
+  },
+  {
+    "id": 1814948998,
+    "lat": 44.428333,
+    "lon": 26.104266,
+    "name": "BCR"
+  },
+  {
+    "id": 2043532789,
+    "lat": 44.420649,
+    "lon": 26.1043549,
+    "name": "Raiffeisen Bank"
+  },
+  {
+    "id": 2043951377,
+    "lat": 44.4332039,
+    "lon": 26.1015653,
+    "name": "CreditEurope Bank Doamnei"
+  },
+  {
+    "id": 2354476935,
+    "lat": 44.4482194,
+    "lon": 26.0763717,
+    "name": "BRD Bank"
+  },
+  {
+    "id": 2354476936,
+    "lat": 44.4473518,
+    "lon": 26.0768435,
+    "name": "Banca Carpatica"
+  },
+  {
+    "id": 2354476937,
+    "lat": 44.4450122,
+    "lon": 26.0780289,
+    "name": "Banca Transilvania"
+  },
+  {
+    "id": 2354476938,
+    "lat": 44.447397,
+    "lon": 26.0767064,
+    "name": "Credit Europe Bank"
+  },
+  {
+    "id": 2354476939,
+    "lat": 44.446717,
+    "lon": 26.0775364,
+    "name": "ING Gara de Nord"
+  },
+  {
+    "id": 2354476940,
+    "lat": 44.4467469,
+    "lon": 26.0774448,
+    "name": "Intesa Sanpaolo Bank Romania"
+  },
+  {
+    "id": 2354476943,
+    "lat": 44.4480213,
+    "lon": 26.0761492,
+    "name": "UniCredit \u021airiac Bank"
+  },
+  {
+    "id": 2355295309,
+    "lat": 44.432552,
+    "lon": 26.0975562,
+    "name": "Unicredit"
+  },
+  {
+    "id": 2379990970,
+    "lat": 44.4441171,
+    "lon": 26.0843344,
+    "name": "Banca Comercial\u0103 Feroviar\u0103"
+  },
+  {
+    "id": 2394766456,
+    "lat": 44.4387084,
+    "lon": 26.101096,
+    "name": "ING B\u0103lcescu"
+  },
+  {
+    "id": 2394766461,
+    "lat": 44.4462927,
+    "lon": 26.0973654,
+    "name": "ING Roman\u0103"
+  },
+  {
+    "id": 2394798808,
+    "lat": 44.42448,
+    "lon": 26.0764964,
+    "name": "ING 13 Septembrie"
+  },
+  {
+    "id": 2394798839,
+    "lat": 44.4374933,
+    "lon": 26.0977954,
+    "name": "ING Victoriei"
+  },
+  {
+    "id": 2394811008,
+    "lat": 44.4338592,
+    "lon": 26.078887,
+    "name": "ING Opera"
+  },
+  {
+    "id": 2394811010,
+    "lat": 44.4391163,
+    "lon": 26.0798992,
+    "name": "ING \u0218tirbei Vod\u0103"
+  },
+  {
+    "id": 2394831465,
+    "lat": 44.4498325,
+    "lon": 26.0833453,
+    "name": "ING Buze\u0219ti"
+  },
+  {
+    "id": 2446521947,
+    "lat": 44.440227,
+    "lon": 26.1002626,
+    "name": "Credit Europe Bank"
+  },
+  {
+    "id": 2446522618,
+    "lat": 44.4395409,
+    "lon": 26.1005932,
+    "name": "Piraeus Bank"
+  },
+  {
+    "id": 2446522619,
+    "lat": 44.4392855,
+    "lon": 26.1007052,
+    "name": "Garanti Bank"
+  },
+  {
+    "id": 2446522620,
+    "lat": 44.4390473,
+    "lon": 26.1002247,
+    "name": "Raiffeisen Bank"
+  },
+  {
+    "id": 2450961538,
+    "lat": 44.4385402,
+    "lon": 26.0784342,
+    "name": "Piraeus Bank"
+  },
+  {
+    "id": 2450962448,
+    "lat": 44.4383651,
+    "lon": 26.0781854,
+    "name": "Alpha Bank"
+  },
+  {
+    "id": 2454097616,
+    "lat": 44.4287565,
+    "lon": 26.1005875,
+    "name": "ING Bank Pt. Unirii"
+  },
+  {
+    "id": 2456477496,
+    "lat": 44.424142,
+    "lon": 26.0744797,
+    "name": "Garanti"
+  },
+  {
+    "id": 286858118,
+    "lat": 44.4388044,
+    "lon": 26.1002857,
+    "name": "ATM Raiffeisen"
+  },
+  {
+    "id": 336496036,
+    "lat": 44.4385121,
+    "lon": 26.1052622,
+    "name": "BRD"
+  },
+  {
+    "id": 1563503668,
+    "lat": 44.4334655,
+    "lon": 26.0786269,
+    "name": "ATM - Raiffeisen Bank - Cl\u0103direa Opera Center"
+  },
+  {
+    "id": 1563506541,
+    "lat": 44.4474726,
+    "lon": 26.0895259,
+    "name": "ATM - Raiffeisen Bank - Casino Casa Vernescu"
+  },
+  {
+    "id": 1563506545,
+    "lat": 44.4396846,
+    "lon": 26.0882689,
+    "name": "ATM - Raiffeisen Bank - Domniile Statului"
+  },
+  {
+    "id": 1563506547,
+    "lat": 44.4245555,
+    "lon": 26.0755659,
+    "name": "ATM - Raiffeisen Bank - Flor\u0103ria Stanjenelul"
+  },
+  {
+    "id": 1563506551,
+    "lat": 44.4278435,
+    "lon": 26.0971239,
+    "name": "ATM - Raiffeisen Bank - Loteria Na\u021bional\u0103"
+  },
+  {
+    "id": 1563506557,
+    "lat": 44.4323665,
+    "lon": 26.0718269,
+    "name": "ATM - Raiffeisen Bank - Nic Impex S.R.L."
+  },
+  {
+    "id": 1892710767,
+    "lat": 44.4362703,
+    "lon": 26.0949349,
+    "name": null
+  },
+  {
+    "id": 2315300373,
+    "lat": 44.4441078,
+    "lon": 26.0944791,
+    "name": "Banca Rom\u00e2neasc\u0103"
+  },
+  {
+    "id": 2394901664,
+    "lat": 44.4474091,
+    "lon": 26.1060464,
+    "name": "ING Media Pro - Aurel Vlaicu"
+  },
+  {
+    "id": 2395004272,
+    "lat": 44.4419069,
+    "lon": 26.0720977,
+    "name": "ING Spitalul Militar"
+  },
+  {
+    "id": 2441876243,
+    "lat": 44.4216666,
+    "lon": 26.1080591,
+    "name": "BRD"
+  }
+]
