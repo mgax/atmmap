@@ -28,6 +28,7 @@ def home():
             'lat': (BBOX['N'] + BBOX['S']) / 2,
             'lon': (BBOX['E'] + BBOX['W']) / 2,
         },
+        'brands': [brand['code'] for brand in BRAND_DATA],
     })
 
 

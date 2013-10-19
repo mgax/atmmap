@@ -3,11 +3,26 @@
   <head>
     <meta charset="utf-8">
     <style>
-      html, body, #map {
+      html, body {
         margin: 0;
         padding: 0;
-        width: 100%;
-        height: 100%;
+      }
+
+      #menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 180px;
+        padding: 10px;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        left: 200px;
+        right: 0;
+        bottom: 0;
       }
     </style>
     <link rel="stylesheet"
@@ -16,18 +31,45 @@
       <link rel="stylesheet"
             href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
     <![endif]-->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.css">
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js"></script>
 
   </head>
 
   <body>
+    <div id="menu">
+      <input type="hidden" name="brands" placeholder="choose brands">
+    </div>
+
     <div id="map"></div>
 
     <script>
       (function() {
         "use strict";
+
+        var brands = {{ brands|tojson|safe }};
+
+        var brands_select = $('#menu [name=brands]').select2({
+          data: _.map(brands, function(code) {
+            return {id: code, text: code};
+          }),
+          multiple: true,
+          allowClear: true,
+          width: '180px'
+        });
+        brands_select.on('change', function(e) {
+          update_markers();
+        });
+
+        var selected_brands = [];
+        function update_markers() {
+          selected_brands = brands_select.select2('val');
+          render_markers();
+        }
 
         var center = {{ center|tojson|safe }};
         var data_url = {{ url_for('static', filename="data.json")|tojson|safe }};
@@ -39,13 +81,28 @@
             attribution: attribution
         }).addTo(map);
 
-        $.getJSON(data_url, function(data) {
+        var data = [];
+        var markers = new L.LayerGroup();
+        markers.addTo(map);
+
+        $.getJSON(data_url, function(resp_data) {
+          data = resp_data;
+          render_markers();
+        })
+
+        function render_markers() {
+          markers.clearLayers();
           _(data).forEach(function(item) {
+            if(selected_brands.length > 0) {
+              if(_.indexOf(selected_brands, item['brand']) == -1) {
+                return;
+              }
+            }
             var marker = L.marker([item['lat'], item['lon']]);
-            marker.addTo(map);
+            marker.addTo(markers);
             marker.bindPopup(item['brand'] || "");
           });
-        })
+        }
       })();
     </script>
   </body>
