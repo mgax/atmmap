@@ -24,24 +24,32 @@ def create_app():
     return app
 
 
+def get_nodes(query):
+    resp = requests.get(DATA_URL, params={'data': query})
+    for elem in resp.json()['elements']:
+        yield {
+            'id': elem['id'],
+            'lat': elem['lat'],
+            'lon': elem['lon'],
+            'name': elem['tags'].get('name'),
+        }
+
+
 def create_manager(app):
     manager = Manager(app)
 
     @manager.command
     def download():
-        query = BANK_QUERY.format(
+        bank_query = BANK_QUERY.format(
             BBOX=BBOX,
             filter="node[amenity=bank][atm=yes]",
         )
-        resp = requests.get(DATA_URL, params={'data': query})
+        atm_query = BANK_QUERY.format(
+            BBOX=BBOX,
+            filter="node[amenity=atm]",
+        )
 
-        data = []
-        for elem in resp.json()['elements']:
-            data.append({
-                'lat': elem['lat'],
-                'lon': elem['lon'],
-                'name': elem['tags'].get('name'),
-            })
+        data = list(get_nodes(bank_query)) + list(get_nodes(atm_query))
 
         data_path = app.static_folder + '/data.json'
         with open(data_path, 'w', encoding='utf-8') as f:
