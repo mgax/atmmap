@@ -13,8 +13,8 @@ DATA_URL = 'http://overpass.osm.rambler.ru/cgi/interpreter'
 BANK_QUERY = ("[out:json];{filter}"
               "({BBOX[S]},{BBOX[W]},{BBOX[N]},{BBOX[E]});"
               "out;")
-NAME_MAP = flask.json.loads(
-    (path(__file__).parent / 'name_map.json')
+BRAND_DATA = flask.json.loads(
+    (path(__file__).parent / 'brand_data.json')
     .text(encoding='utf-8')
 )
 
@@ -40,7 +40,7 @@ def create_app():
 
 def get_brand(node):
     name = node['tags'].get('name', '').lower()
-    for search, brand in NAME_MAP:
+    for search, brand in BRAND_DATA:
         if search in name:
             return brand
 
