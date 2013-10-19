@@ -8,7 +8,7 @@ from path import path
 
 logger = logging.getLogger(__name__)
 
-BBOX = {'E': 26.11, 'N': 44.45, 'W': 26.07, 'S': 44.42}
+BBOX = {'E': 26.25, 'N': 44.55, 'W': 25.95, 'S': 44.33}
 DATA_URL = 'http://overpass.osm.rambler.ru/cgi/interpreter'
 BANK_QUERY = ("[out:json];{filter}"
               "({BBOX[S]},{BBOX[W]},{BBOX[N]},{BBOX[E]});"
