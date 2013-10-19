@@ -39,8 +39,15 @@ def create_app():
 
 
 def get_brand(node):
-    name = node['tags'].get('name', '')
-    return name
+    name = node['tags'].get('name', '').lower()
+    for search, brand in NAME_MAP:
+        if search in name:
+            return brand
+
+    else:
+        logger.warn("Can't figure out brand for %d: %r",
+                    node['id'], node['tags'])
+        return "?"
 
 
 def get_nodes(query):
