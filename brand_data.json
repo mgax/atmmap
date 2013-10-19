@@ -1,17 +1,62 @@
 [
-  ["ing", "ing"],
-  ["bcr", "bcr"],
-  ["brd", "brd"],
-  ["rbs", "rbs"],
-  ["cec", "cec"],
-  ["raiffeisen", "raiffeisen"],
-  ["alpha", "alpha"],
-  ["garanti", "garanti"],
-  ["unicredit", "unicredit"],
-  ["bancpost", "bancpost"],
-  ["crediteurope", "crediteurope"],
-  ["credit europe", "crediteurope"],
-  ["piraeus", "piraeus"],
-  ["intesa", "intesa"],
-  ["transilvania", "transilvania"]
+  {
+    "code": "ing",
+    "patterns": ["ing"]
+  },
+  {
+    "code": "bcr",
+    "patterns": ["bcr"]
+  },
+  {
+    "code": "brd",
+    "patterns": ["brd"]
+  },
+  {
+    "code": "rbs",
+    "patterns": ["rbs"]
+  },
+  {
+    "code": "cec",
+    "patterns": ["cec"]
+  },
+  {
+    "code": "raiffeisen",
+    "patterns": ["raiffeisen"]
+  },
+  {
+    "code": "alpha",
+    "patterns": ["alpha"]
+  },
+  {
+    "code": "garanti",
+    "patterns": ["garanti"]
+  },
+  {
+    "code": "unicredit",
+    "patterns": ["unicredit"]
+  },
+  {
+    "code": "bancpost",
+    "patterns": ["bancpost"]
+  },
+  {
+    "code": "crediteurope",
+    "patterns": ["crediteurope"]
+  },
+  {
+    "code": "crediteurope",
+    "patterns": ["credit europe"]
+  },
+  {
+    "code": "piraeus",
+    "patterns": ["piraeus"]
+  },
+  {
+    "code": "intesa",
+    "patterns": ["intesa"]
+  },
+  {
+    "code": "transilvania",
+    "patterns": ["transilvania"]
+  }
 ]

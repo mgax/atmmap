@@ -40,9 +40,9 @@ def create_app():
 
 def get_brand(node):
     name = node['tags'].get('name', '').lower()
-    for search, brand in BRAND_DATA:
-        if search in name:
-            return brand
+    for brand in BRAND_DATA:
+        if any(p in name for p in brand['patterns']):
+            return brand['code']
 
     else:
         logger.warn("Can't figure out brand for %d: %r",
