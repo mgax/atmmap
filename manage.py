@@ -15,11 +15,17 @@ views = flask.Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    return ':)'
+    return flask.render_template('home.html', **{
+        'center': {
+            'lat': (BBOX['N'] + BBOX['S']) / 2,
+            'lon': (BBOX['E'] + BBOX['W']) / 2,
+        },
+    })
 
 
 def create_app():
     app = flask.Flask(__name__)
+    app.debug = True
     app.register_blueprint(views)
     return app
 
