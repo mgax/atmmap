@@ -72,6 +72,8 @@
         }
 
         var center = {{ center|tojson|safe }};
+        var bbox = {{ bbox|tojson|safe }};
+
         var data_url = {{ url_for('static', filename="data.json")|tojson|safe }};
 
         var attribution = '&copy; <a href="http://osm.org/copyright">'
@@ -80,6 +82,9 @@
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: attribution
         }).addTo(map);
+
+        var bounds = [[bbox.S, bbox.W], [bbox.N, bbox.E]];
+        L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
 
         var data = [];
         var markers = new L.LayerGroup();
