@@ -44,7 +44,7 @@
           _(data).forEach(function(item) {
             var marker = L.marker([item['lat'], item['lon']]);
             marker.addTo(map);
-            marker.bindPopup(item['name'] || "");
+            marker.bindPopup(item['brand'] || "");
           });
         })
       })();

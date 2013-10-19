@@ -30,14 +30,19 @@ def create_app():
     return app
 
 
+def get_brand(node):
+    name = node['tags'].get('name', '')
+    return name
+
+
 def get_nodes(query):
     resp = requests.get(DATA_URL, params={'data': query})
-    for elem in resp.json()['elements']:
+    for node in resp.json()['elements']:
         yield {
-            'id': elem['id'],
-            'lat': elem['lat'],
-            'lon': elem['lon'],
-            'name': elem['tags'].get('name'),
+            'id': node['id'],
+            'lat': node['lat'],
+            'lon': node['lon'],
+            'brand': get_brand(node),
         }
 
 
