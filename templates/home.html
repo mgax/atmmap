@@ -73,6 +73,7 @@
 
         var center = {{ center|tojson|safe }};
         var bbox = {{ bbox|tojson|safe }};
+        var draw_bbox = {{ config['DEBUG']|tojson|safe }};
 
         var data_url = {{ url_for('static', filename="data.json")|tojson|safe }};
 
@@ -83,8 +84,10 @@
             attribution: attribution
         }).addTo(map);
 
-        var bounds = [[bbox.S, bbox.W], [bbox.N, bbox.E]];
-        L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+        if(draw_bbox) {
+          var bounds = [[bbox.S, bbox.W], [bbox.N, bbox.E]];
+          L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+        }
 
         var data = [];
         var markers = new L.LayerGroup();
