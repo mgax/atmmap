@@ -3,12 +3,17 @@
 import flask
 from flask.ext.script import Manager
 import requests
+from path import path
 
 BBOX = {'E': 26.11, 'N': 44.45, 'W': 26.07, 'S': 44.42}
 DATA_URL = 'http://overpass.osm.rambler.ru/cgi/interpreter'
 BANK_QUERY = ("[out:json];{filter}"
               "({BBOX[S]},{BBOX[W]},{BBOX[N]},{BBOX[E]});"
               "out;")
+NAME_MAP = flask.json.loads(
+    (path(__file__).parent / 'name_map.json')
+    .text(encoding='utf-8')
+)
 
 views = flask.Blueprint('views', __name__)
 
