@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 
+import logging
 import flask
 from flask.ext.script import Manager
 import requests
 from path import path
+
+logger = logging.getLogger(__name__)
 
 BBOX = {'E': 26.11, 'N': 44.45, 'W': 26.07, 'S': 44.42}
 DATA_URL = 'http://overpass.osm.rambler.ru/cgi/interpreter'
@@ -75,4 +78,5 @@ def create_manager(app):
 
 
 if __name__ == '__main__':
+    logging.basicConfig()
     create_manager(create_app()).run()
