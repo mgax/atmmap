@@ -35,7 +35,7 @@ def home():
 
 def create_app():
     app = flask.Flask(__name__)
-    app.debug = True
+    app.config.from_pyfile(path(__file__).parent / 'settings.py')
     app.register_blueprint(views)
     return app
 
@@ -83,6 +83,11 @@ def create_manager(app):
         data_path = app.static_folder + '/data.json'
         with open(data_path, 'w', encoding='utf-8') as f:
             flask.json.dump(data, f, indent=2, sort_keys=True)
+
+    @manager.command
+    def waitress(port):
+        from waitress import serve
+        serve(flask.current_app.wsgi_app, host='localhost', port=int(port))
 
     return manager
 
