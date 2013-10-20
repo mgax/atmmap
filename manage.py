@@ -53,9 +53,8 @@ def get_brand(node):
         return "?"
 
 
-def get_nodes(query):
-    resp = requests.get(DATA_URL, params={'data': query})
-    for node in resp.json()['elements']:
+def get_nodes(data):
+    for node in data['elements']:
         yield {
             'id': node['id'],
             'lat': node['lat'],
@@ -68,7 +67,7 @@ def create_manager(app):
     manager = Manager(app)
 
     @manager.command
-    def download():
+    def download(dump_file=None):
         bank_query = BANK_QUERY.format(
             BBOX=BBOX,
             filter="node[amenity=bank][atm=yes]",
@@ -78,7 +77,15 @@ def create_manager(app):
             filter="node[amenity=atm]",
         )
 
-        data = list(get_nodes(bank_query)) + list(get_nodes(atm_query))
+        bank_resp = requests.get(DATA_URL, params={'data': bank_query})
+        atm_resp = requests.get(DATA_URL, params={'data': atm_query})
+        data = list(get_nodes(bank_resp.json())) + \
+               list(get_nodes(atm_resp.json()))
+
+        if dump_file:
+            with open(dump_file, 'wb') as f:
+                f.write(bank_resp.content)
+                f.write(atm_resp.content)
 
         data_path = app.static_folder + '/data.json'
         with open(data_path, 'w', encoding='utf-8') as f:
