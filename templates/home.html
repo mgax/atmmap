@@ -48,23 +48,25 @@
       (function() {
         "use strict";
 
-        var brands = {{ brands|tojson|safe }};
+        var app = window.app = {};
 
-        var brands_select = $('#menu [name=brands]').select2({
-          data: _.map(brands, function(code) {
+        app.brands = {{ brands|tojson|safe }};
+
+        app.brands_select = $('#menu [name=brands]').select2({
+          data: _.map(app.brands, function(code) {
             return {id: code, text: code};
           }),
           multiple: true,
           allowClear: true,
           width: '180px'
         });
-        brands_select.on('change', function(e) {
+        app.brands_select.on('change', function(e) {
           update_markers();
         });
 
-        var selected_brands = [];
+        app.selected_brands = [];
         function update_markers() {
-          selected_brands = brands_select.select2('val');
+          app.selected_brands = app.brands_select.select2('val');
           render_markers();
         }
 
@@ -76,19 +78,19 @@
 
         var attribution = '&copy; <a href="http://osm.org/copyright">'
                         + 'OpenStreetMap</a> contributors';
-        var map = L.map('map').setView([center.lat, center.lon], 12);
+        app.map = L.map('map').setView([center.lat, center.lon], 12);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
             attribution: attribution
-        }).addTo(map);
+        }).addTo(app.map);
 
         if(draw_bbox) {
           var bounds = [[bbox.S, bbox.W], [bbox.N, bbox.E]];
-          L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(map);
+          L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(app.map);
         }
 
         var data = [];
-        var markers = new L.LayerGroup();
-        markers.addTo(map);
+        app.markers = new L.LayerGroup();
+        app.markers.addTo(app.map);
 
         $.getJSON(data_url, function(resp_data) {
           data = resp_data;
@@ -96,15 +98,15 @@
         });
 
         function render_markers() {
-          markers.clearLayers();
+          app.markers.clearLayers();
           _(data).forEach(function(item) {
-            if(selected_brands.length > 0) {
-              if(_.indexOf(selected_brands, item['brand']) == -1) {
+            if(app.selected_brands.length > 0) {
+              if(_.indexOf(app.selected_brands, item['brand']) == -1) {
                 return;
               }
             }
             var marker = L.marker([item['lat'], item['lon']]);
-            marker.addTo(markers);
+            marker.addTo(app.markers);
             marker.bindPopup(item['brand'] || "");
           });
         }
