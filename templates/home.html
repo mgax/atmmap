@@ -3,8 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    {%- for href in [
+        "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",
+        "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css",
+        "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.css",
+        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                                   'MarkerCluster.css'),
+        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                                   'MarkerCluster.Default.css'),
+      ] %}
+      <link rel="stylesheet" href="{{ href }}">
+    {%- endfor %}
+
+    <!--[if lte IE 8]><link rel="stylesheet"
+    href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+
     <style>
       #menu {
         position: absolute;
@@ -22,23 +36,6 @@
         bottom: 0;
       }
     </style>
-    <link rel="stylesheet"
-          href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-    <!--[if lte IE 8]>
-      <link rel="stylesheet"
-            href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
-    <![endif]-->
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.css">
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/MarkerCluster.css') }}">
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/MarkerCluster.Default.css') }}">
-    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js"></script>
-    <script src="{{ url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/leaflet.markercluster.js') }}"></script>
 
   </head>
 
@@ -60,6 +57,16 @@
       window.app = {{ js_app|tojson|safe }};
     </script>
 
-    <script src="{{ url_for('static', filename="script.js") }}"></script>
+    {%- for src in [
+        "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
+        "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
+        "http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.js",
+        "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js",
+        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                                   'leaflet.markercluster.js'),
+        url_for('static', filename="script.js"),
+        ] %}
+      <script src={{ src }}></script>
+    {%- endfor %}
   </body>
 </html>
