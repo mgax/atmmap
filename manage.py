@@ -117,4 +117,5 @@ def create_manager(app):
 
 if __name__ == '__main__':
     logging.basicConfig()
+    logging.getLogger('werkzeug').setLevel(logging.INFO)
     create_manager(create_app()).run()
