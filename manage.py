@@ -21,6 +21,11 @@ BRAND_DATA = flask.json.loads(
 views = flask.Blueprint('views', __name__)
 
 
+@views.route('/_crashme')
+def crashme():
+    raise RuntimeError("Crashing, as requested :(")
+
+
 @views.route('/')
 def home():
     return flask.render_template('home.html', **{
