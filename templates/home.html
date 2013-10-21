@@ -45,72 +45,16 @@
     </div>
 
     <script>
-      (function() {
-        "use strict";
-
-        var app = window.app = {};
-
-        app.brands = {{ brands|tojson|safe }};
-
-        app.brands_select = $('#menu [name=brands]').select2({
-          data: _.map(app.brands, function(code) {
-            return {id: code, text: code};
-          }),
-          multiple: true,
-          allowClear: true,
-          width: '180px'
-        });
-        app.brands_select.on('change', function(e) {
-          update_markers();
-        });
-
-        app.selected_brands = [];
-        function update_markers() {
-          app.selected_brands = app.brands_select.select2('val');
-          render_markers();
-        }
-
-        var center = {{ center|tojson|safe }};
-        var bbox = {{ bbox|tojson|safe }};
-        var draw_bbox = {{ config['DEBUG']|tojson|safe }};
-
-        var data_url = {{ url_for('static', filename="data.json")|tojson|safe }};
-
-        var attribution = '&copy; <a href="http://osm.org/copyright">'
-                        + 'OpenStreetMap</a> contributors';
-        app.map = L.map('map').setView([center.lat, center.lon], 12);
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: attribution
-        }).addTo(app.map);
-
-        if(draw_bbox) {
-          var bounds = [[bbox.S, bbox.W], [bbox.N, bbox.E]];
-          L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(app.map);
-        }
-
-        var data = [];
-        app.markers = new L.LayerGroup();
-        app.markers.addTo(app.map);
-
-        $.getJSON(data_url, function(resp_data) {
-          data = resp_data;
-          render_markers();
-        });
-
-        function render_markers() {
-          app.markers.clearLayers();
-          _(data).forEach(function(item) {
-            if(app.selected_brands.length > 0) {
-              if(_.indexOf(app.selected_brands, item['brand']) == -1) {
-                return;
-              }
-            }
-            var marker = L.marker([item['lat'], item['lon']]);
-            marker.addTo(app.markers);
-            marker.bindPopup(item['brand'] || "");
-          });
-        }
-      })();
+      {%- set js_app = {
+          'brands': brands,
+          'center': center,
+          'bbox': bbox,
+          'draw_bbox': config['DEBUG'],
+          'data_url': url_for('static', filename="data.json"),
+        } %}
+      window.app = {{ js_app|tojson|safe }};
     </script>
+
+    <script src="{{ url_for('static', filename="script.js") }}"></script>
   </body>
 </html>
