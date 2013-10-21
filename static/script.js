@@ -29,6 +29,9 @@
             attribution: attribution
     }).addTo(app.map);
 
+    var locate_control = L.control.locate();
+    locate_control.addTo(app.map);
+
     if(app.draw_bbox) {
         var bounds = [[app.bbox.S, app.bbox.W], [app.bbox.N, app.bbox.E]];
         L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(app.map);

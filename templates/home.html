@@ -6,9 +6,13 @@
                                'MarkerCluster.css'),
     url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
                                'MarkerCluster.Default.css'),
+    url_for('static', filename='lib/leaflet-locatecontrol-0.18.0/'
+                               'L.Control.Locate.css'),
   ] -%}
 {%- set CSS_ASSETS_IE8 = [
       "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css",
+      url_for('static', filename='lib/leaflet-locatecontrol-0.18.0/'
+                                 'L.Control.Locate.ie.css'),
   ] -%}
 {%- set JS_ASSETS = [
     "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
@@ -17,6 +21,8 @@
     "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js",
     url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
                                'leaflet.markercluster.js'),
+    url_for('static', filename='lib/leaflet-locatecontrol-0.18.0/'
+                               'L.Control.Locate.js'),
     url_for('static', filename="script.js"),
     ] -%}
 
