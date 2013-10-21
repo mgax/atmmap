@@ -1,23 +1,39 @@
+{%- set CSS_ASSETS = [
+    "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",
+    "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css",
+    "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.css",
+    url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                               'MarkerCluster.css'),
+    url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                               'MarkerCluster.Default.css'),
+  ] -%}
+{%- set CSS_ASSETS_IE8 = [
+      "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css",
+  ] -%}
+{%- set JS_ASSETS = [
+    "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
+    "http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.js",
+    "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js",
+    url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
+                               'leaflet.markercluster.js'),
+    url_for('static', filename="script.js"),
+    ] -%}
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {%- for href in [
-        "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css",
-        "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css",
-        "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.css",
-        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
-                                   'MarkerCluster.css'),
-        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
-                                   'MarkerCluster.Default.css'),
-      ] %}
+    {%- for href in CSS_ASSETS %}
       <link rel="stylesheet" href="{{ href }}">
     {%- endfor %}
 
-    <!--[if lte IE 8]><link rel="stylesheet"
-    href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" /><![endif]-->
+    <!--[if lt IE 9]>
+    {%- for href in CSS_ASSETS_IE8 %}
+      <link rel="stylesheet" href="{{ href }}" />
+    {%- endfor %}
+    <![endif]-->
 
     <style>
       #menu {
@@ -57,15 +73,7 @@
       window.app = {{ js_app|tojson|safe }};
     </script>
 
-    {%- for src in [
-        "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js",
-        "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-        "http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.2.1/lodash.js",
-        "http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.1/select2.min.js",
-        url_for('static', filename='lib/leaflet.markercluster-1ac2d9e/'
-                                   'leaflet.markercluster.js'),
-        url_for('static', filename="script.js"),
-        ] %}
+    {%- for src in JS_ASSETS %}
       <script src={{ src }}></script>
     {%- endfor %}
   </body>
