@@ -38,7 +38,9 @@
     }
 
     var data = [];
-    app.markers = new L.MarkerClusterGroup();
+    app.markers = new L.MarkerClusterGroup({
+        maxClusterRadius: 30
+    });
     app.markers.addTo(app.map);
 
     $.getJSON(app.data_url, function(resp_data) {
